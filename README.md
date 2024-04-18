@@ -1,28 +1,28 @@
 # SE-4458-Software-Architecture-Design-of-Modern-Large-Scale-Systems-Midterm-1
-# Proje Amacı: 
-Projenin amacı mobile app, banking app ve web sitesinin API isteklerini karşılamaktır. Bu proje .net ve entity framework, mysql teknolojileri kullanılarak oluşturulan bir backend projesidir. 
-Database: Database kısmında bills, billdetails olmak üzere 2 tablo bulunmaktadır. Bills tablosu bir kullanıcının aylık bazda faturalarını ödeyip ödemediğini ve topalm miktarını gösterir. Billdetails tabloosu ise bir faturanın o ay yaptığı harcamların nerde yapıldığınım ve miktarını gösterir.
+# Project Objective: 
+The aim of the project is to meet the API requests of mobile app, banking app and website. This project is a backend project created using .net and entity framework, mysql technologies. 
+# Database: 
+There are 2 tables in the database section: bills and billdetails. Bills table shows whether a user pays his/her bills on a monthly basis and the total amount. Billdetails table shows where and how much an invoice was spent that month.
 
 # ER Diagram:
 
  ![Picture1](https://github.com/kubranurcivelek/SE-4458-Software-Architecture-Design-of-Modern-Large-Scale-Systems-Midterm-1/assets/76735018/4588cebd-2156-4cc8-9974-a2c7a2b01dea)
 
- User tablosu şimdilik static olarak .net projesi içeriisnde bulunmaktadır. İlerleyen süreçte user tablosu olarak eklenecektir.
+User table is in the .net project as static for now. It will be added as a user table in the future.
 
 # Design:
-Proje 3 temel parça üzerine kurulmuştur. Bunlar Controller, Entities, DTOlardır.
+The project is built on 3 basic parts. These are Controller, Entities, DTOs.
 # •	Controller:
-  Controllerlar applicationların ulaştığı api gateleri oluşturur. Controllerda database tabanlı listeleme, güncelleme, oluşturma ve silme gibi işlemler burda   
-  gerçekleştirilir. Ayrıca kullanıcının giriş yaparak ulaşabilme yetkilendirilmesi burda yapılmaktadır. Kullanıcının yapmak istediği asıl işlem burada 
-  gerçekleştirilir. 
+ Controllers create api gates that applications access. In the controller, database-based operations such as listing, updating, creating and deleting are performed  here. In addition, the authorization of the user to access by logging in is done here. The actual operation that the user wants to do is performed here.
 # •	Entities: 
-  Context kullanılarak .net kısmındaki entity classları ile databasedeki tabloların eşleştirilmesi sağlanır. 
+  By using Context, the entity classes in the .net part and the tables in the database are matched.
 # •	DTO: 
-  Kullanıcının gönderdiği ya da kullanıcıya gösterilen data yapılarıdır. Controllerlarda oluşturulur ve kullanılır.
+  They are data structures sent by the user or shown to the user. They are created and used in controllers.
 
 # Issues and Assumptions: 
-•	Month parametresi şimdilik int olarak tanıtılmıştır, tam net tarih tutulmamaktadır. ilerleyen zamanlarda dateTime olarak değiştirilip apilerin de buna benzer şekilde çalıştırılması beklenmektedir. 
-•	Kullanıcı test amaçlı static olarak bulunmaktadır. Kullanıcı eklenip çıkarılabilir olacak şekilde databasede tablosu oluşturulup login controller ona göre değiştiirlecektir.
-•	Primary keyler int olarak tutulup yüksek data sayısında yetersiz kalmaktadır. Milyarlara ulaşacak datalar için primary keylerin düzenlenmesi gerekmektedir.
-•	Kullanıcı rol controlleri şimdilik yoktur. İlerleyen dönemlerde hangi apilerin hangi rollerde çalışacağı belirlenecektir.
+•	Month parameter is introduced as int for now, the exact date is not kept. it is expected to be changed to dateTime in the future and the apis will be run similarly. 
+•	The user is static for testing purposes. A table will be created in the database so that the user can be added and removed and the login controller will be changed accordingly.
+•	Primary keys are kept as int and are insufficient in high data count. Primary keys need to be edited for data that will reach billions.
+•	User role controls are not available for now. In the future, it will be determined which apis will work in which roles.
+
 
