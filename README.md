@@ -1,6 +1,11 @@
 # SE-4458-Software-Architecture-Design-of-Modern-Large-Scale-Systems-Midterm-1
 # Project Objective: 
-The aim of the project is to meet the API requests of mobile app, banking app and website. This project is a backend project created using .net and entity framework, mysql technologies. 
+The aim of the project is to meet the API requests of mobile app, banking app and website. This project is a backend project created using .net and entity framework, mysql technologies.
+
+# Links:
+# •	Github: https://github.com/kubranurcivelek/SE-4458-Software-Architecture-Design-of-Modern-Large-Scale-Systems-Midterm-1
+# •	Cloud Video Link: https://mega.nz/file/r89Q0QTL#GzzJh-4BwgjssorXeNQxXkAdinHl5PW7o6iXga76AZg
+
 # Database: 
 There are 2 tables in the database section: bills and billdetails. Bills table shows whether a user pays his/her bills on a monthly basis and the total amount. Billdetails table shows where and how much an invoice was spent that month.
 
